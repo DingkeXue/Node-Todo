@@ -2,13 +2,18 @@ const fs = require("fs");
 // 创建服务器
 const http = require("http");
 
-// 读写文件流
-const myReadStream = fs.createReadStream("read.json");
-const myWriteStream = fs.createWriteStream("writeStream.txt");
-
 const server = http.createServer((req, res) => {
-	res.writeHead(200, {"Content-type": "application/json"});
-	myReadStream.pipe(res);
+	console.log(req.url);
+	if(req.url === "/home" || req.url === "/") {
+		res.writeHead(200, {"Content-type": "text/html"});
+		fs.createReadStream("index.html").pipe(res);
+	} else if(req.url === "/contact") {
+		res.writeHead(200, {"Content-type": "text/html"});
+		fs.createReadStream("contact.html").pipe(res);
+	} else {
+		res.writeHead(200, {"Content-type": "text/html"});
+		fs.createReadStream("./api/more.html").pipe(res);
+	}
 })
 
 server.listen(8888, "localhost");
