@@ -1,0 +1,19 @@
+body {
+	background-color: gainsboro;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	width: 500px;
+}
+
+.header {
+	background: dodgerblue;
+	height: 80px;
+	width: 100%;
+	padding: 15px 0;
+	border-radius: 10px;
+}
