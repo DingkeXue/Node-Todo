@@ -1,9 +1,13 @@
 body {
-	background-color: gainsboro;
 	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
 }
 
 .wrapper {
@@ -11,9 +15,68 @@ body {
 }
 
 .header {
-	background: dodgerblue;
+	background: #25b99a;
 	height: 80px;
-	width: 100%;
 	padding: 15px 0;
 	border-radius: 10px;
+	z-index: 5;
+	padding: 10px;
+	position: relative;
 }
+
+#todo {
+	height: 50px;
+	color: white;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 0 10px;
+	text-indent: 14px;
+	float: left;
+	margin-top: 15px;
+	width: 95%;
+	border-radius: 25px;
+	background: rgba(255, 255, 255, .2);
+	appearance: none;
+	outline: none;
+	border: none;
+	
+}
+
+/* 设置input内文字样式 */
+#todo::-webkit-input-placeholder {
+	color: #DDD;
+}
+
+/* 设置button */
+#button {
+	width: 3.125rem;
+	height: 3.125rem;
+	border-radius: 50%;
+	position: absolute;
+	right: 2%;
+	top: 25%;
+	color: #25B99A;
+	border: none;
+	outline: none;
+	background-color: #FFFFFF;
+	font-size: 30px;
+	
+}
+
+/* 未完成样式 */
+.uncompleted li,
+.completed li {
+	color: white;
+	min-height: 50px;
+	background: #25B99A;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	line-height: 50px;
+	padding-left: 10px;
+}
+
+.list button {
+	float: right;
+	top: 10px;
+}
+
